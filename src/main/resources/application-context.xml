@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="bootstrap" class="video_lectures.ee.lecture_4.Bootstrap">
+        <property name="taskProvider" ref="taskProvider"/>
+        <property name="executor" ref="serialExecutor"/>
+    </bean>
+    <bean id="taskProvider" class="video_lectures.ee.lecture_4.IntegerTaskProvider" init-method="init"/>
+    <bean id="serialExecutor" class="video_lectures.ee.lecture_4.SerialExecutor" scope="prototype"/>
+</beans>
